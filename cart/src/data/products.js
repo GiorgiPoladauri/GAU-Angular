@@ -1,0 +1,36 @@
+// FIGMA: ჩაანაცვლეთ img გზები Figma-დან ექსპორტირებული სურათებით (public/images/). იხ. README.md
+export const initialProducts = [
+  {
+    id: 1,
+    title: "T-shirts with multiple colors, for men and lady",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Artel Market",
+    price: 78.99,
+    qty: 9,
+    image: "/images/tshirt.svg",
+  },
+  {
+    id: 2,
+    title: "T-shirts with multiple colors, for men and lady",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Best factory LLC",
+    price: 39.0,
+    qty: 3,
+    image: "/images/backpack.svg",
+  },
+  {
+    id: 3,
+    title: "T-shirts with multiple colors, for men and lady",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Artel Market",
+    price: 170.5,
+    qty: 1,
+    image: "/images/lamp.svg",
+  },
+];
