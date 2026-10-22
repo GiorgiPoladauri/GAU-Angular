@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- ყველა მომხმარებლის სია -->
+  <div *ngIf="!selectedUser">
+    <h3>Users</h3>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Registration Time</th>
+          <th>Last Login</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" (click)="selectUser(user.id)" class="clickable-row">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.registrationTime }}</td>
+          <td>{{ user.lastLogin }}</td>
+          <td>
+            <span [ngClass]="{ 'status-confirmed': user.status === 'Confirmed', 'status-blocked': user.status === 'Blocked' }">
+              {{ user.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- არჩეული მომხმარებლის დეტალური ხედი -->
+  <div *ngIf="selectedUser">
+    <button (click)="clearSelection()" class="back-btn">← Back to Users List</button>
+    <h2>{{ selectedUser.email }}</h2>
+    
+    <table class="detail-table">
+      <tr>
+        <th>ID</th>
+        <td>{{ selectedUser.id }}</td>
+      </tr>
+      <tr>
+        <th>UserName</th>
+        <td>{{ selectedUser.username }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ selectedUser.email }}</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>
+          <span [ngClass]="{ 'status-confirmed': selectedUser.status === 'Confirmed', 'status-blocked': selectedUser.status === 'Blocked' }">
+            {{ selectedUser.status }}
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.container { padding: 20px; font-family: sans-serif; }
+.user-table, .detail-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.user-table th, .user-table td, .detail-table th, .detail-table td { border: 1px solid #e0e0e0; padding: 10px; text-align: left; }
+.user-table th, .detail-table th { background-color: #fafafa; }
+.clickable-row { cursor: pointer; }
+.clickable-row:hover { background-color: #f5f5f5; }
+.status-confirmed { color: #2e7d32; font-weight: bold; }
+.status-blocked { color: #d32f2f; font-weight: bold; }
+.back-btn { padding: 8px 12px; margin-bottom: 15px; cursor: pointer; }
