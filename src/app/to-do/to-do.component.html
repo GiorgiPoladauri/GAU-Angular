@@ -1,0 +1,29 @@
+<div class="card">
+  <aside class="sidebar">
+    <div 
+      *ngFor="let cat of categories" 
+      [class.active]="selectedCategory === cat"
+      (click)="selectedCategory = cat">
+      {{ cat }}
+    </div>
+  </aside>
+
+  <main class="content">
+    <h2>{{ selectedCategory }} Tasks</h2>
+    
+    <input 
+      type="text" 
+      [placeholder]="'Add a task in ' + selectedCategory" 
+      [(ngModel)]="newTaskTitle" 
+      (keyup.enter)="addTask()" />
+
+    <ul class="task-list">
+      <li *ngFor="let task of filteredTasks">
+        <input type="checkbox" [(ngModel)]="task.completed" />
+        <span [class.done]="task.completed">{{ task.title }}</span>
+        <span class="badge">{{ task.category }}</span>
+        <button (click)="deleteTask(task.id)">🗑</button>
+      </li>
+    </ul>
+  </main>
+</div>

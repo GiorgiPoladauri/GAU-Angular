@@ -1,0 +1,11 @@
+.card { display: flex; width: 650px; background: #fff; border-radius: 12px; font-family: sans-serif; overflow: hidden; }
+.sidebar { width: 160px; border-right: 1px solid #eee; padding: 24px 16px; }
+.sidebar div { padding: 10px 0; cursor: pointer; color: #555; font-weight: 500; }
+.sidebar div.active { color: #d96b66; font-weight: bold; }
+.content { flex: 1; padding: 24px; }
+input[type="text"] { width: 100%; padding: 12px; background: #f4f4f4; border: none; border-radius: 6px; box-sizing: border-box; }
+.task-list { list-style: none; padding: 0; margin-top: 16px; }
+.task-list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+.done { text-decoration: line-through; color: #888; }
+.badge { background: #d96b66; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+button { margin-left: auto; border: none; background: none; cursor: pointer; }
