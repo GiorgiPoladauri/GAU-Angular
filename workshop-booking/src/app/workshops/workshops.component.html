@@ -1,0 +1,72 @@
+<section class="panel">
+  <h2>ტრენინგები და ვორქშოფები</h2>
+
+  <div class="controls">
+    <input
+      type="text"
+      placeholder="ძებნა დასახელებით"
+      [(ngModel)]="searchText"
+    />
+
+    <select [(ngModel)]="selectedCategory">
+      <option value="">ყველა კატეგორია</option>
+      @for (category of categories; track category) {
+        <option [value]="category">{{ category }}</option>
+      }
+    </select>
+
+    <select [(ngModel)]="sortOrder">
+      <option value="asc">ფასი: ზრდადობით</option>
+      <option value="desc">ფასი: კლებადობით</option>
+    </select>
+  </div>
+
+  @if (message()) {
+    <p class="message">{{ message() }}</p>
+  }
+
+  @if (filteredWorkshops().length === 0) {
+    <p class="empty">ტრენინგი ვერ მოიძებნა</p>
+  }
+
+  <div class="cards">
+    @for (workshop of filteredWorkshops(); track workshop.id) {
+      <article class="card">
+        <div class="tags">
+          @if (workshop.popular) {
+            <span class="tag popular">პოპულარული</span>
+          }
+          @if (workshop.discount > 0) {
+            <span class="tag discount">ფასდაკლება</span>
+          }
+          @if (workshop.availableSeats === 0) {
+            <span class="tag soldout">ადგილები ამოწურულია</span>
+          }
+        </div>
+
+        <h3>{{ workshop.title }}</h3>
+        <p>კატეგორია: {{ workshop.category }}</p>
+        <p>თარიღი: {{ workshop.date | date: 'dd.MM.yyyy' }}</p>
+
+        <p>
+          ფასი:
+          @if (workshop.discount > 0) {
+            <span class="old-price">{{ workshop.price | number: '1.2-2' }} ₾</span>
+            <strong>{{ bookingService.getUnitPrice(workshop) | number: '1.2-2' }} ₾</strong>
+          } @else {
+            <strong>{{ workshop.price | number: '1.2-2' }} ₾</strong>
+          }
+        </p>
+
+        <p>თავისუფალი ადგილები: {{ workshop.availableSeats }}</p>
+
+        <button
+          [disabled]="workshop.availableSeats === 0"
+          (click)="book(workshop)"
+        >
+          დაჯავშნა
+        </button>
+      </article>
+    }
+  </div>
+</section>

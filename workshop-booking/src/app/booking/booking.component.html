@@ -1,0 +1,48 @@
+<section class="panel">
+  <h2>დაჯავშნის სია</h2>
+
+  @if (bookingService.items().length === 0) {
+    <p class="empty">დაჯავშნის სია ცარიელია</p>
+  } @else {
+    <div class="items">
+      @for (item of bookingService.items(); track item.workshop.id) {
+        <div class="item">
+          <h4>{{ item.workshop.title }}</h4>
+
+          <p>
+            ფასი:
+            @if (item.workshop.discount > 0) {
+              <span class="old-price">{{ item.workshop.price | number: '1.2-2' }} ₾</span>
+            }
+            {{ bookingService.getUnitPrice(item.workshop) | number: '1.2-2' }} ₾
+          </p>
+
+          <div class="quantity">
+            <button
+              [disabled]="item.quantity <= 1"
+              (click)="decrease(item.workshop.id)"
+            >
+              -
+            </button>
+            <span>{{ item.quantity }}</span>
+            <button
+              [disabled]="item.quantity >= item.workshop.availableSeats"
+              (click)="increase(item.workshop.id)"
+            >
+              +
+            </button>
+          </div>
+
+          <p>ჯამი: <strong>{{ bookingService.getLineTotal(item) | number: '1.2-2' }} ₾</strong></p>
+
+          <button class="remove" (click)="remove(item.workshop.id)">წაშლა</button>
+        </div>
+      }
+    </div>
+
+    <div class="summary">
+      <p>დაჯავშნილი ადგილების საერთო რაოდენობა: <strong>{{ bookingService.totalSeats() }}</strong></p>
+      <p>საერთო ღირებულება: <strong>{{ bookingService.totalPrice() | number: '1.2-2' }} ₾</strong></p>
+    </div>
+  }
+</section>
