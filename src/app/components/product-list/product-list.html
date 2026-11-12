@@ -1,0 +1,5 @@
+<section class="grid">
+  @for (product of products(); track product.image) {
+    <app-product-card [product]="product" />
+  }
+</section>

@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="img-box">
+    @if (product().is_new) {
+      <span class="badge new">NEW</span>
+    }
+    <img [src]="imagePath()" [alt]="product().name" />
+    <button class="add-btn" type="button" (click)="addToCart()">Add to Cart</button>
+  </div>
+
+  <h3 class="name">{{ product().name }}</h3>
+
+  @if (product().rating !== undefined) {
+    <div class="rating">
+      @for (s of stars(); track s) {
+        <span class="star" [class]="starFill(s)">★</span>
+      }
+      <span class="rating-text">{{ product().rating!.toFixed(1) }}/5</span>
+    </div>
+  }
+
+  <div class="prices">
+    <span class="price">{{ product().price }}</span>
+    @if (product().is_discounted) {
+      <span class="old-price">{{ product().original_price }}</span>
+      <span class="badge discount">-{{ product().discount_percentage }}</span>
+    }
+  </div>
+</div>
