@@ -1,0 +1,920 @@
+[
+ {
+  "id": 1,
+  "name": "Canon Camera EOS 2000, Black 10x zoom",
+  "category": "Photo & Video",
+  "images": [
+   "images/p1_1.svg",
+   "images/p1_2.svg",
+   "images/p1_3.svg",
+   "images/p1_4.svg"
+  ],
+  "price": 399.0,
+  "oldPrice": 499.0,
+  "rating": 9.6,
+  "reviews": 109,
+  "orders": 686,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 399.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 367.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 339.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Shenzhen Tech Co.",
+   "location": "China, Shenzhen",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 2,
+  "name": "Apple iPhone 14 Pro, 256GB, Deep Purple",
+  "category": "Mobile accessory",
+  "images": [
+   "images/p2_1.svg",
+   "images/p2_2.svg",
+   "images/p2_3.svg",
+   "images/p2_4.svg"
+  ],
+  "price": 49.0,
+  "oldPrice": null,
+  "rating": 7.0,
+  "reviews": 145,
+  "orders": 116,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 49.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 45.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 41.65
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Nordic Goods AB",
+   "location": "Sweden, Stockholm",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 3,
+  "name": "Xiaomi Pad 5, 11\" 120Hz Display",
+  "category": "Mobile accessory",
+  "images": [
+   "images/p3_1.svg",
+   "images/p3_2.svg",
+   "images/p3_3.svg",
+   "images/p3_4.svg"
+  ],
+  "price": 399.0,
+  "oldPrice": null,
+  "rating": 8.5,
+  "reviews": 240,
+  "orders": 539,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 399.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 367.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 339.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Tbilisi Import Ltd",
+   "location": "Georgia, Tbilisi",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 4,
+  "name": "Samsung Galaxy S23, 128GB, Phantom Black",
+  "category": "Mobile accessory",
+  "images": [
+   "images/p4_1.svg",
+   "images/p4_2.svg",
+   "images/p4_3.svg",
+   "images/p4_4.svg"
+  ],
+  "price": 199.0,
+  "oldPrice": 249.0,
+  "rating": 6.9,
+  "reviews": 119,
+  "orders": 448,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 199.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 183.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 169.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Anatolia Export",
+   "location": "Turkey, Istanbul",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 5,
+  "name": "MacBook Pro 14\" M2, 16GB RAM",
+  "category": "Computers",
+  "images": [
+   "images/p5_1.svg",
+   "images/p5_2.svg",
+   "images/p5_3.svg",
+   "images/p5_4.svg"
+  ],
+  "price": 79.0,
+  "oldPrice": null,
+  "rating": 7.5,
+  "reviews": 149,
+  "orders": 454,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 79.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 72.68
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 67.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Guanjoi Trading LLC",
+   "location": "Germany, Berlin",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 6,
+  "name": "Lenovo ThinkPad X1 Carbon Gen 10",
+  "category": "Computers",
+  "images": [
+   "images/p6_1.svg",
+   "images/p6_2.svg",
+   "images/p6_3.svg",
+   "images/p6_4.svg"
+  ],
+  "price": 49.0,
+  "oldPrice": null,
+  "rating": 9.3,
+  "reviews": 39,
+  "orders": 248,
+  "freeShipping": false,
+  "inStock": false,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 49.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 45.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 41.65
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Shenzhen Tech Co.",
+   "location": "China, Shenzhen",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 7,
+  "name": "Amazfit GTS 4 Smart Watch, Silver",
+  "category": "Smart watches",
+  "images": [
+   "images/p7_1.svg",
+   "images/p7_2.svg",
+   "images/p7_3.svg",
+   "images/p7_4.svg"
+  ],
+  "price": 1499.0,
+  "oldPrice": 1874.0,
+  "rating": 8.7,
+  "reviews": 23,
+  "orders": 610,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 1499.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 1379.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 1274.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Nordic Goods AB",
+   "location": "Sweden, Stockholm",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 8,
+  "name": "Apple Watch Series 8, 45mm",
+  "category": "Smart watches",
+  "images": [
+   "images/p8_1.svg",
+   "images/p8_2.svg",
+   "images/p8_3.svg",
+   "images/p8_4.svg"
+  ],
+  "price": 1299.0,
+  "oldPrice": null,
+  "rating": 8.0,
+  "reviews": 64,
+  "orders": 67,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 1299.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 1195.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 1104.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Tbilisi Import Ltd",
+   "location": "Georgia, Tbilisi",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 9,
+  "name": "Sony WH-1000XM5 Wireless Headphones",
+  "category": "Audio",
+  "images": [
+   "images/p9_1.svg",
+   "images/p9_2.svg",
+   "images/p9_3.svg",
+   "images/p9_4.svg"
+  ],
+  "price": 998.0,
+  "oldPrice": null,
+  "rating": 9.4,
+  "reviews": 82,
+  "orders": 449,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 998.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 918.16
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 848.3
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Anatolia Export",
+   "location": "Turkey, Istanbul",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 10,
+  "name": "JBL Tune 760NC Over-Ear Headphones",
+  "category": "Audio",
+  "images": [
+   "images/p10_1.svg",
+   "images/p10_2.svg",
+   "images/p10_3.svg",
+   "images/p10_4.svg"
+  ],
+  "price": 129.0,
+  "oldPrice": 161.0,
+  "rating": 8.4,
+  "reviews": 154,
+  "orders": 335,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 129.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 118.68
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 109.65
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Guanjoi Trading LLC",
+   "location": "Germany, Berlin",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 11,
+  "name": "GoPro HERO6 4K Action Camera - Black",
+  "category": "Photo & Video",
+  "images": [
+   "images/p11_1.svg",
+   "images/p11_2.svg",
+   "images/p11_3.svg",
+   "images/p11_4.svg"
+  ],
+  "price": 998.0,
+  "oldPrice": null,
+  "rating": 9.2,
+  "reviews": 54,
+  "orders": 125,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 998.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 918.16
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 848.3
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Shenzhen Tech Co.",
+   "location": "China, Shenzhen",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 12,
+  "name": "Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle",
+  "category": "Clothing",
+  "images": [
+   "images/p12_1.svg",
+   "images/p12_2.svg",
+   "images/p12_3.svg",
+   "images/p12_4.svg"
+  ],
+  "price": 1299.0,
+  "oldPrice": null,
+  "rating": 8.5,
+  "reviews": 56,
+  "orders": 401,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 1299.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 1195.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 1104.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Classic shoes",
+   "Material": "Cotton blend",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Nordic Goods AB",
+   "location": "Sweden, Stockholm",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 13,
+  "name": "Classic Polo T-shirt, Short Sleeve, Regular Fit",
+  "category": "Clothing",
+  "images": [
+   "images/p13_1.svg",
+   "images/p13_2.svg",
+   "images/p13_3.svg",
+   "images/p13_4.svg"
+  ],
+  "price": 79.0,
+  "oldPrice": 99.0,
+  "rating": 8.4,
+  "reviews": 24,
+  "orders": 597,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 79.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 72.68
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 67.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Classic shoes",
+   "Material": "Cotton blend",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Tbilisi Import Ltd",
+   "location": "Georgia, Tbilisi",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 14,
+  "name": "Running Shoes Lightweight Mesh Sneakers",
+  "category": "Footwear",
+  "images": [
+   "images/p14_1.svg",
+   "images/p14_2.svg",
+   "images/p14_3.svg",
+   "images/p14_4.svg"
+  ],
+  "price": 49.0,
+  "oldPrice": null,
+  "rating": 8.7,
+  "reviews": 135,
+  "orders": 716,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 49.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 45.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 41.65
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Classic shoes",
+   "Material": "Cotton blend",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Anatolia Export",
+   "location": "Turkey, Istanbul",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 15,
+  "name": "Google Pixel 7, 128GB, Snow",
+  "category": "Mobile accessory",
+  "images": [
+   "images/p15_1.svg",
+   "images/p15_2.svg",
+   "images/p15_3.svg",
+   "images/p15_4.svg"
+  ],
+  "price": 998.0,
+  "oldPrice": null,
+  "rating": 8.1,
+  "reviews": 88,
+  "orders": 496,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 998.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 918.16
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 848.3
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Guanjoi Trading LLC",
+   "location": "Germany, Berlin",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 16,
+  "name": "Dell XPS 13 Plus, Intel Core i7",
+  "category": "Computers",
+  "images": [
+   "images/p16_1.svg",
+   "images/p16_2.svg",
+   "images/p16_3.svg",
+   "images/p16_4.svg"
+  ],
+  "price": 1299.0,
+  "oldPrice": 1624.0,
+  "rating": 9.6,
+  "reviews": 100,
+  "orders": 326,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 1299.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 1195.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 1104.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Shenzhen Tech Co.",
+   "location": "China, Shenzhen",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 17,
+  "name": "Bose QuietComfort 45 Headphones",
+  "category": "Audio",
+  "images": [
+   "images/p17_1.svg",
+   "images/p17_2.svg",
+   "images/p17_3.svg",
+   "images/p17_4.svg"
+  ],
+  "price": 199.0,
+  "oldPrice": null,
+  "rating": 9.2,
+  "reviews": 186,
+  "orders": 818,
+  "freeShipping": true,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 199.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 183.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 169.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Nordic Goods AB",
+   "location": "Sweden, Stockholm",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ },
+ {
+  "id": 18,
+  "name": "Fitbit Sense 2 Smartwatch",
+  "category": "Smart watches",
+  "images": [
+   "images/p18_1.svg",
+   "images/p18_2.svg",
+   "images/p18_3.svg",
+   "images/p18_4.svg"
+  ],
+  "price": 199.0,
+  "oldPrice": null,
+  "rating": 7.0,
+  "reviews": 84,
+  "orders": 557,
+  "freeShipping": false,
+  "inStock": true,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "priceTiers": [
+   {
+    "minQty": 1,
+    "maxQty": 99,
+    "price": 199.0
+   },
+   {
+    "minQty": 100,
+    "maxQty": 699,
+    "price": 183.08
+   },
+   {
+    "minQty": 700,
+    "maxQty": null,
+    "price": 169.15
+   }
+  ],
+  "specs": {
+   "Price": "Negotiable",
+   "Type": "Standard",
+   "Material": "Plastic material",
+   "Design": "Modern nice",
+   "Customization": "Customized logo and design custom packages",
+   "Protection": "Refund Policy",
+   "Warranty": "2 years full warranty"
+  },
+  "supplier": {
+   "name": "Tbilisi Import Ltd",
+   "location": "Georgia, Tbilisi",
+   "verified": true,
+   "worldwideShipping": true
+  }
+ }
+]

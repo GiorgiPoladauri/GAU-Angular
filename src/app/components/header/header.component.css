@@ -1,0 +1,15 @@
+.header { background: #fff; border-bottom: 1px solid #e3e8ee; }
+.header-inner { display: flex; align-items: center; gap: 24px; padding: 14px 16px; }
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo-icon { background: #0d6efd; color: #fff; border-radius: 8px; padding: 4px 7px; font-size: 16px; }
+.logo-text { color: #8cb7f5; font-weight: 700; font-size: 22px; }
+.search { flex: 1; display: flex; border: 2px solid #0d6efd; border-radius: 6px; overflow: hidden; background: #fff; }
+.search input { flex: 1; border: 0; padding: 8px 12px; outline: none; font-size: 14px; min-width: 0; }
+.search select { border: 0; border-left: 1px solid #dee2e7; padding: 0 10px; background: #fff; font-size: 14px; outline: none; max-width: 160px; }
+.search button { background: #0d6efd; color: #fff; border: 0; padding: 0 22px; font-weight: 500; cursor: pointer; }
+.search button:hover { background: #0b5ed7; }
+.nav { display: flex; gap: 18px; }
+.nav-item { position: relative; display: flex; flex-direction: column; align-items: center; font-size: 11px; color: #8b96a5; text-decoration: none; }
+.nav-item span { font-size: 16px; color: #6c757d; }
+.badge { position: absolute; top: -6px; right: -8px; background: #fa3434; color: #fff; border-radius: 10px; font-size: 10px; padding: 1px 5px; }
+@media (max-width: 720px) { .nav { display: none; } .header-inner { gap: 12px; } }

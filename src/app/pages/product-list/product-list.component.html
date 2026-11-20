@@ -1,0 +1,89 @@
+<div class="container page">
+  <div class="toolbar">
+    <div class="count">
+      <b>{{ items().length }}</b> items
+      @if (category()) { in <b>{{ category() }}</b> }
+      @if (q()) { for "<b>{{ q() }}</b>" }
+    </div>
+
+    <div class="controls">
+      <label class="check">
+        <input type="checkbox" [checked]="freeOnly()" (change)="onFree($event)" />
+        Free shipping
+      </label>
+
+      <select [value]="sort()" (change)="onSort($event)" aria-label="Sort products">
+        @for (o of sortOptions; track o.value) {
+          <option [value]="o.value" [selected]="o.value === sort()">{{ o.label }}</option>
+        }
+      </select>
+
+      <div class="view-toggle">
+        <button
+          type="button"
+          [class.active]="view() === 'grid'"
+          (click)="setParam('view', 'grid')"
+          title="Grid view"
+        >▦</button>
+        <button
+          type="button"
+          [class.active]="view() === 'list'"
+          (click)="setParam('view', null)"
+          title="List view"
+        >☰</button>
+      </div>
+    </div>
+  </div>
+
+  @if (loading()) {
+    <div class="state">Loading products…</div>
+  } @else if (items().length === 0) {
+    <div class="state">
+      No products found.
+      <button type="button" class="link" (click)="clearFilters()">Clear filters</button>
+    </div>
+  } @else {
+    <div class="products" [class.grid]="view() === 'grid'">
+      @for (p of items(); track p.id) {
+        <article class="card">
+          <a class="thumb" [routerLink]="['/product', p.id]">
+            <img [src]="p.images[0]" [alt]="p.name" />
+          </a>
+
+          <div class="info">
+            <a class="title" [routerLink]="['/product', p.id]">{{ p.name }}</a>
+
+            <div class="price">
+              <span class="now">${{ p.price | number: '1.2-2' }}</span>
+              @if (p.oldPrice) {
+                <span class="old">${{ p.oldPrice | number: '1.2-2' }}</span>
+              }
+            </div>
+
+            <div class="meta">
+              <span class="stars">{{ stars(p.rating) }}</span>
+              <span class="rating">{{ p.rating }}</span>
+              <span class="dot">•</span>
+              <span>{{ p.orders }} orders</span>
+              @if (p.freeShipping) {
+                <span class="dot">•</span>
+                <span class="free">Free Shipping</span>
+              }
+            </div>
+
+            <p class="desc">{{ p.description }}</p>
+            <a class="details" [routerLink]="['/product', p.id]">View details</a>
+          </div>
+
+          <button
+            type="button"
+            class="heart"
+            [class.on]="saved.isSaved(p.id)"
+            (click)="toggleSaved($event, p.id)"
+            [attr.aria-label]="saved.isSaved(p.id) ? 'Remove from saved' : 'Save'"
+          >{{ saved.isSaved(p.id) ? '♥' : '♡' }}</button>
+        </article>
+      }
+    </div>
+  }
+</div>

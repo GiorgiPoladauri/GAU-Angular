@@ -1,0 +1,258 @@
+==========================================================
+CLASSWORK 2 - ANGULAR PRODUCT SHOP (GAU-Angular, branch ClassWork2)
+==========================================================
+
+
+1. WHAT THE TEACHER ASKED
+----------------------------------------------------------
+Original task (Georgian):
+
+"ააგეთ სრულად საიტი, მონაცემები უნდა მოდიოდეს სერვისიდან, უნდა
+მუშაობდეს განსხვავებულად დალაგების და თითოეული პროდუქტის
+დეტალების ნახვის ლოგიკა."
+
+Meaning in English:
+"Build the whole site. The data must come from a service. The logic for
+sorting in different ways and for viewing the details of each product
+must work."
+
+The task has 4 parts. Where each one is in the project:
+
+ Requirement                          Where it is
+ ------------------------------------ ------------------------------------------
+ A) Build the full site               Whole project (list page + details page,
+                                      header, routing)
+ B) Data comes from a service         src/app/services/product.service.ts
+                                      (data file: public/data/products.json)
+ C) Sorting works in different ways   src/app/pages/product-list/
+                                      product-list.component.ts  (items())
+ D) Product details view logic        src/app/pages/product-detail/
+                                      product-detail.component.ts
+                                      + route "product/:id" in app.routes.ts
+
+
+2. VERSIONS USED
+----------------------------------------------------------
+ Angular (core)   19.2.x
+ Angular CLI      19.2.x   (install: npm install -g @angular/cli@19)
+ TypeScript       5.7
+ RxJS             7.8
+ zone.js          0.15
+ Node.js          20.19+ or 22 LTS (built and tested with Node 22)
+ npm              10.x
+
+Check on your PC:
+   node -v
+   ng version
+
+
+3. HOW TO RUN
+----------------------------------------------------------
+   npm install
+   npx ng serve -o
+Open http://localhost:4200
+
+How to create the same kind of project from zero:
+   ng new gau-shop --style=css --routing --ssr=false
+   cd gau-shop
+   ng serve
+
+
+4. PROJECT STRUCTURE
+----------------------------------------------------------
+gau-shop/
+  public/
+    data/products.json        <- product data (18 products)
+    images/                   <- product pictures (SVG)
+  src/
+    index.html                <- main HTML page
+    styles.css                <- global styles
+    main.ts                   <- app start
+    app/
+      app.component.ts        <- root: shows header + current page
+      app.config.ts           <- app settings (router, HttpClient)
+      app.routes.ts           <- URL -> page mapping
+      models/product.ts       <- TypeScript types (Product, PriceTier...)
+      services/
+        product.service.ts    <- loads data (THE SERVICE)
+        saved.service.ts      <- "save for later" (favourites)
+      components/header/      <- logo, search, category, icons
+      pages/
+        product-list/         <- list page (sorting, filters, views)
+        product-detail/       <- details page
+
+
+5. CODE EXPLAINED
+----------------------------------------------------------
+
+5.1 models/product.ts
+   Defines the shape of a product with TypeScript interfaces:
+   id, name, category, images, price, oldPrice, rating, reviews,
+   orders, freeShipping, inStock, description, priceTiers, specs,
+   supplier. SortKey is the list of allowed sort options.
+   Why: TypeScript warns us if we use a wrong field name.
+
+5.2 services/product.service.ts   (REQUIREMENT B)
+   - @Injectable({ providedIn: 'root' }) = one shared service for the
+     whole app.
+   - HttpClient makes a GET request to data/products.json.
+   - shareReplay(1) = the file is requested only once and the result is
+     reused.
+   - getProducts()      returns all products.
+   - getProductById(id) returns one product (used by the details page).
+   - getCategories()    returns the unique category names (used in the
+                        header dropdown).
+   The components never read the JSON file directly. They only ask the
+   service. If a real backend appears later, only the URL changes.
+
+5.3 services/saved.service.ts
+   Keeps the list of saved product ids in a signal and in localStorage.
+   - toggle(id)  adds or removes a product
+   - isSaved(id) true/false (heart icon)
+   - count       number shown in the header badge
+
+5.4 app.config.ts
+   provideRouter(routes)  = turns on routing
+   provideHttpClient()    = turns on HttpClient (needed by the service)
+
+5.5 app.routes.ts
+   ''             -> ProductListComponent
+   'product/:id'  -> ProductDetailComponent  (:id is the product number)
+   '**'           -> redirect to the list (unknown URL)
+
+5.6 app.component.ts
+   Template: <app-header /> and <router-outlet />.
+   The header is always visible, the router-outlet shows the page that
+   matches the URL.
+
+5.7 components/header (header.component.ts / .html / .css)
+   - Search input + category select + Search button.
+   - FormsModule + [(ngModel)] connect the inputs to the variables
+     "query" and "category".
+   - search() navigates to "/" and puts the values into the URL:
+       /?q=samsung&category=Audio
+     The list page reads them from there.
+   - Icons: Profile, Message, Saved (with count badge), My cart.
+
+5.8 pages/product-list  (REQUIREMENT C - sorting)
+   The page state is stored in URL query params:
+       q, category, sort, view, free
+   Example: /?sort=price-asc&view=grid&free=1
+
+   Main parts of product-list.component.ts:
+   - products = toSignal(service.getProducts())
+        Data from the service, converted to a signal.
+        null means "still loading".
+   - params = toSignal(route.queryParamMap)
+        Current URL parameters as a signal.
+   - computed() values (q, category, sort, view, freeOnly)
+        Read the single parameters. They update automatically when the
+        URL changes.
+   - items = computed(...)   <- THE SORTING LOGIC
+        1. Copy the list.
+        2. Filter by search text (name contains q).
+        3. Filter by category.
+        4. Filter free shipping (if checked).
+        5. Sort with switch(sort):
+             price-asc   cheapest first
+             price-desc  most expensive first
+             rating      highest rating first
+             orders      most orders first
+             name        A-Z (localeCompare)
+             featured    original order
+   - setParam(key, value) updates one URL parameter (router.navigate with
+     queryParamsHandling: 'merge' keeps the others).
+   - onSort / onFree handle the select and the checkbox.
+   - stars(rating) converts rating 0-10 to stars (e.g. 7.5 -> 4 stars).
+   - toggleSaved() heart button, stopPropagation so it does not open the
+     product.
+
+   The HTML (product-list.component.html) uses the new Angular control flow:
+   - @if / @else if / @else   loading, empty result, list
+   - @for (p of items(); track p.id)   shows each product card
+   - [routerLink]="['/product', p.id]" link to the details page
+   - class "grid" switches between grid view and list view (CSS)
+
+5.9 pages/product-detail  (REQUIREMENT D - product details logic)
+   Opened by the URL /product/5 (5 = product id).
+
+   Main parts of product-detail.component.ts:
+   - route.paramMap -> map to Number(id) -> switchMap to
+     service.getProductById(id) -> toSignal
+        Takes the id from the URL and asks the service for that product.
+        null      = loading
+        undefined = product not found (message is shown)
+   - selectedImage (signal)  which thumbnail is selected for the big image
+   - quantity (signal)       quantity input (default 1)
+   - activeTier = computed(...)
+        Finds the price tier for the chosen quantity.
+        Example: 1-99 pcs, 100-699 pcs, 700+ pcs. The active tier is
+        highlighted on the page.
+   - total = computed(...)   tier price x quantity
+   - specEntries             converts the specs object to rows for the
+                             table
+   - related = computed(...) up to 4 other products of the same category
+   - inquirySent (signal)    "Send inquiry" button changes to "Inquiry
+                             sent"
+
+   The HTML shows: gallery with thumbnails, in-stock label, name, rating,
+   price tiers, quantity + total, specs table, description, supplier box
+   (Send inquiry, Seller's profile), Save for later, related products.
+
+5.10 Angular ideas used (short explanations for the teacher)
+   - Standalone components: no NgModule, each component has "imports".
+   - Signals: signal(), computed(), toSignal() - reactive values that
+     update the page automatically.
+   - Dependency injection: inject(ProductService) gets the shared service.
+   - RxJS Observable: HttpClient returns Observables (map, switchMap,
+     shareReplay).
+   - Routing with parameters: 'product/:id' and query params.
+   - Template syntax: {{ }} interpolation, [property] binding,
+     (event) binding, [(ngModel)] two-way binding.
+   - Control flow: @if, @for, @let.
+   - Pipes: number pipe formats prices ('1.2-2' = 2 decimals).
+
+
+6. HOW TO SHOW IT TO THE TEACHER (demo checklist)
+----------------------------------------------------------
+ 1. Open the list page - data is loaded (the service gives it).
+ 2. Change the sort select: price low-high, high-low, rating, orders,
+    name. Watch the order change and the URL change.
+ 3. Switch grid/list view with the two icons.
+ 4. Type in the search box / choose a category / tick Free shipping.
+ 5. Click a product (or "View details") - details page opens.
+ 6. Change the quantity to 100 and 700 - the price tier and total change.
+ 7. Click the small images under the big image - the picture changes.
+ 8. Click the heart / "Save for later" - the header badge changes.
+ 9. Show product.service.ts and products.json - this is the service
+    that provides the data.
+
+
+7. UPLOAD TO GITHUB (branch ClassWork2)
+----------------------------------------------------------
+   git clone https://github.com/GiorgiPoladauri/GAU-Angular.git
+   cd GAU-Angular
+   git checkout -b ClassWork2
+
+   (copy the project files here, WITHOUT node_modules)
+
+   git add .
+   git commit -m "ClassWork2: product list and details"
+   git push -u origin ClassWork2
+
+If the project is inside a subfolder, run the git commands from the
+repository root (the folder that contains .git).
+
+
+8. COMMON PROBLEMS
+----------------------------------------------------------
+ - "ng is not recognized": close and reopen the terminal, or run
+   npx ng serve instead.
+ - PowerShell blocks scripts: run once
+   Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+ - Port 4200 busy: ng serve --port 4300
+ - Blank list: check that public/data/products.json exists and that
+   provideHttpClient() is in app.config.ts.
+ - Wrong Angular version: uninstall and install again
+   npm uninstall -g @angular/cli
+   npm install -g @angular/cli@19

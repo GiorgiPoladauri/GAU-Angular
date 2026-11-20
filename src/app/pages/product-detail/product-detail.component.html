@@ -1,0 +1,125 @@
+<div class="container page">
+  <a routerLink="/" class="back">← Back to products</a>
+
+  @if (product() === null) {
+    <div class="state">Loading…</div>
+  } @else if (product() === undefined) {
+    <div class="state">
+      Product not found. <a routerLink="/">Return to the list</a>
+    </div>
+  } @else {
+    @let p = product()!;
+    <div class="panel">
+      <div class="layout">
+        <!-- gallery -->
+        <div class="gallery">
+          <div class="main-img">
+            <img [src]="p.images[selectedImage()]" [alt]="p.name" />
+          </div>
+          <div class="thumbs">
+            @for (img of p.images; track img; let i = $index) {
+              <button
+                type="button"
+                class="thumb"
+                [class.active]="i === selectedImage()"
+                (click)="selectedImage.set(i)"
+              >
+                <img [src]="img" [alt]="p.name + ' ' + (i + 1)" />
+              </button>
+            }
+          </div>
+        </div>
+
+        <!-- info -->
+        <div class="info">
+          @if (p.inStock) {
+            <div class="stock in">✓ In stock</div>
+          } @else {
+            <div class="stock out">✗ Out of stock</div>
+          }
+          <h1>{{ p.name }}</h1>
+
+          <div class="meta">
+            <span class="stars">{{ stars(p.rating) }}</span>
+            <span class="rating">{{ p.rating }}</span>
+            <span class="dot">•</span><span>{{ p.reviews }} reviews</span>
+            <span class="dot">•</span><span>{{ p.orders }} sold</span>
+            @if (p.freeShipping) {
+              <span class="dot">•</span><span class="free">Free Shipping</span>
+            }
+          </div>
+
+          <div class="tiers">
+            @for (t of p.priceTiers; track t.minQty) {
+              <div class="tier" [class.active]="isActive(t)">
+                <div class="tier-price">${{ t.price | number: '1.2-2' }}</div>
+                <div class="tier-qty">{{ tierLabel(t) }}</div>
+              </div>
+            }
+          </div>
+
+          <div class="buy">
+            <label>
+              Quantity
+              <input type="number" min="1" [value]="quantity()" (input)="onQuantity($event)" />
+            </label>
+            <div class="total">
+              Total: <b>${{ total() | number: '1.2-2' }}</b>
+              <small>(${{ activeTier()?.price | number: '1.2-2' }} / pc)</small>
+            </div>
+          </div>
+
+          <table class="specs">
+            @for (s of specEntries(); track s[0]) {
+              <tr>
+                <th>{{ s[0] }}:</th>
+                <td>{{ s[1] }}</td>
+              </tr>
+            }
+          </table>
+
+          <p class="desc">{{ p.description }}</p>
+        </div>
+
+        <!-- supplier -->
+        <aside class="side">
+          <div class="supplier">
+            <div class="sup-head">
+              <span class="avatar">{{ p.supplier.name.charAt(0) }}</span>
+              <div>
+                <small>Supplier</small>
+                <div>{{ p.supplier.name }}</div>
+              </div>
+            </div>
+            <ul>
+              <li>📍 {{ p.supplier.location }}</li>
+              @if (p.supplier.verified) { <li>✔ Verified Seller</li> }
+              @if (p.supplier.worldwideShipping) { <li>🌐 Worldwide shipping</li> }
+            </ul>
+            <button type="button" class="btn primary" (click)="inquirySent.set(true)">
+              {{ inquirySent() ? 'Inquiry sent ✓' : 'Send inquiry' }}
+            </button>
+            <button type="button" class="btn">Seller's profile</button>
+          </div>
+
+          <button type="button" class="save" (click)="saved.toggle(p.id)">
+            {{ saved.isSaved(p.id) ? '♥ Saved' : '♡ Save for later' }}
+          </button>
+        </aside>
+      </div>
+    </div>
+
+    @if (related().length) {
+      <h2 class="rel-title">Related products</h2>
+      <div class="related">
+        @for (r of related(); track r.id) {
+          <a class="rel-card" [routerLink]="['/product', r.id]">
+            <img [src]="r.images[0]" [alt]="r.name" />
+            <div class="rel-name">{{ r.name }}</div>
+            <div class="rel-price">${{ r.price | number: '1.2-2' }}</div>
+          </a>
+        }
+      </div>
+    }
+  }
+</div>

@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="container header-inner">
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">🛍</span>
+      <span class="logo-text">Brand</span>
+    </a>
+
+    <form class="search" (ngSubmit)="search()">
+      <input
+        type="text"
+        name="q"
+        placeholder="Search"
+        [(ngModel)]="query"
+        aria-label="Search products"
+      />
+      <select name="category" [(ngModel)]="category" aria-label="Category">
+        <option value="">All category</option>
+        @for (c of categories$ | async; track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+      <button type="submit">Search</button>
+    </form>
+
+    <nav class="nav">
+      <a class="nav-item" href="javascript:void(0)"><span>👤</span>Profile</a>
+      <a class="nav-item" href="javascript:void(0)"><span>💬</span>Message</a>
+      <a class="nav-item" href="javascript:void(0)">
+        <span>♥</span>Saved
+        @if (saved.count() > 0) {
+          <b class="badge">{{ saved.count() }}</b>
+        }
+      </a>
+      <a class="nav-item" href="javascript:void(0)"><span>🛒</span>My cart</a>
+    </nav>
+  </div>
+</header>
